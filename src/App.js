@@ -1,19 +1,17 @@
 import Homepage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
-import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [country, setCountry] = useState({});
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Homepage selectCountry={setCountry} />
+            <Homepage />
           </Route>
           <Route path="/detail/:name">
-            <DetailPage country={country} />
+            <DetailPage />
           </Route>
         </Switch>
       </Router>

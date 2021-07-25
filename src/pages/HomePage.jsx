@@ -46,7 +46,6 @@ function Homepage(props) {
             <Card
               key={country.name}
               country={country}
-              selectCountry={props.selectCountry}
             />
           );
         })}
