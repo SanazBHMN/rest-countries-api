@@ -19,7 +19,13 @@ function Homepage() {
     } else {
       fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
         .then((response) => (response.status === 200 ? response.json() : []))
-        .then((data) => setCountries(data));
+        .then((data) =>
+          setCountries(
+            data.filter((country) =>
+              country.name.toLowerCase().startsWith(countryName)
+            )
+          )
+        );
     }
   }, [countryName]);
 
