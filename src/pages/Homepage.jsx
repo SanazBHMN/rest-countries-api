@@ -8,14 +8,28 @@ function Homepage() {
   const [countries, setCountries] = useState([]);
   const [countryName, setCountryName] = useState("");
 
+  // console.log(countryName, countries);
+
   useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all")
-      .then((response) => response.json())
-      .then((data) => setCountries(data));
-  }, []);
+    console.log(`searching for ${countryName}`);
+    if (countryName === "") {
+      fetch("https://restcountries.eu/rest/v2/all")
+        .then((response) => response.json())
+        .then((data) => setCountries(data));
+    } else {
+      fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          } else {
+            return [];
+          }
+        })
+        .then((data) => setCountries(data));
+    }
+  }, [countryName]);
 
   function handleSearch(e) {
-    console.log(e)
     setCountryName(e.target.value);
   }
   // console.log(countryName)
@@ -26,16 +40,10 @@ function Homepage() {
       <Searchbox input={countryName} search={handleSearch} />
       <Dropdown />
       <div className="container">
-        {countries.map((country) => (
-          <Card
-            key={country.name}
-            name={country.name}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            flag={country.flag}
-          />
-        ))}
+        {countries.map((country) => {
+          // console.log(country);
+          return <Card key={country.name} country={country} />;
+        })}
       </div>
     </div>
   );
