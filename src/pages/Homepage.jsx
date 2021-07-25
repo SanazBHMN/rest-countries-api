@@ -18,16 +18,18 @@ function Homepage() {
       <Header />
       <Searchbox />
       <Dropdown />
-      {countries.map((country) => (
-        <Card
-          key={country.name}
-          name={country.name}
-          population={country.population}
-          region={country.region}
-          capital={country.capital}
-          flag={country.flag}
-        />
-      ))}
+      <div className="container">
+        {countries.map((country) => (
+          <Card
+            key={country.name}
+            name={country.name}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+            flag={country.flag}
+          />
+        ))}
+      </div>
     </div>
   );
 }
