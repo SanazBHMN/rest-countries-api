@@ -1,6 +1,6 @@
 import React from "react";
 
-function Searchbox() {
+function Searchbox({input, search}) {
   return (
     <div className="search">
       <div className="searchbox">
@@ -9,6 +9,8 @@ function Searchbox() {
           className="search-country"
           type="search"
           placeholder="Search for a country..."
+          value={input}
+          onChange={(e) => search}
         />
       </div>
     </div>

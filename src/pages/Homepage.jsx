@@ -6,6 +6,7 @@ import Searchbox from "../components/Searchbox";
 
 function Homepage() {
   const [countries, setCountries] = useState([]);
+  const [countryName, setCountryName] = useState("");
 
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -13,10 +14,16 @@ function Homepage() {
       .then((data) => setCountries(data));
   }, []);
 
+  function handleSearch(e) {
+    console.log(e)
+    setCountryName(e.target.value);
+  }
+  // console.log(countryName)
+
   return (
     <div>
       <Header />
-      <Searchbox />
+      <Searchbox input={countryName} search={handleSearch} />
       <Dropdown />
       <div className="container">
         {countries.map((country) => (

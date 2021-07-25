@@ -1,7 +1,7 @@
 import React from "react";
 
 function Card(props) {
-  // console.log(props.region)
+//   console.log(props)
   return (
     <div className="country-card">
       <div className="country-flag">
