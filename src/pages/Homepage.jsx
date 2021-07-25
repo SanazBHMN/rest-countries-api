@@ -18,13 +18,7 @@ function Homepage() {
         .then((data) => setCountries(data));
     } else {
       fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
-        .then((response) => {
-          if (response.status === 200) {
-            return response.json();
-          } else {
-            return [];
-          }
-        })
+        .then((response) => (response.status === 200 ? response.json() : []))
         .then((data) => setCountries(data));
     }
   }, [countryName]);
