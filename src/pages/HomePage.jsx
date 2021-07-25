@@ -4,7 +4,7 @@ import Dropdown from "../components/Dropdown";
 import Header from "../components/Header";
 import Searchbox from "../components/Searchbox";
 
-function Homepage() {
+function Homepage(props) {
   const [countries, setCountries] = useState([]);
   const [countryName, setCountryName] = useState("");
 
@@ -42,7 +42,13 @@ function Homepage() {
       <div className="container">
         {countries.map((country) => {
           // console.log(country);
-          return <Card key={country.name} country={country} />;
+          return (
+            <Card
+              key={country.name}
+              country={country}
+              selectCountry={props.selectCountry}
+            />
+          );
         })}
       </div>
     </div>
