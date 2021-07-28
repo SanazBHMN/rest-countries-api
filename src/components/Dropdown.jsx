@@ -3,7 +3,7 @@ import React from "react";
 function Dropdown() {
   return (
     <div className="dropdown">
-      <button className="dropbtn">Filter by Region</button>
+      <p className="dropdown-text">Filter by Region</p>
       <div className="dropdown-content">
         <a href="#">Africa</a>
         <a href="#">America</a>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import Dropdown from "../components/Dropdown";
-import Header from "../components/Header";
 import Searchbox from "../components/Searchbox";
 
 function Homepage(props) {
@@ -36,7 +35,6 @@ function Homepage(props) {
 
   return (
     <div>
-      <Header />
       <Searchbox input={countryName} search={handleSearch} />
       <Dropdown />
       <div className="container">
