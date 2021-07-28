@@ -52,7 +52,7 @@ body {
 
 /* Dropdown */
 /* .dropdown input { */
-  /* background-color: var(--color-secondary);
+/* background-color: var(--color-secondary);
   padding: 10px 15px;
   border-radius: 3px;
   border: none;
@@ -70,8 +70,8 @@ body {
 }
 
 .country-card .country-flag img {
-  width: 100%;
   border-top-left-radius: 5px;
+  width: 100%;
   border-top-right-radius: 5px;
 }
 
@@ -95,7 +95,6 @@ body {
   border: none;
 }
 
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -117,4 +116,15 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* DetailPage */
+.detail-page .country-flag {
+  display: flex;
+  justify-content: center;
+  margin: 5rem auto;
+}
+
+.detail-page .country-flag img {
+  width: 70%;
 }
