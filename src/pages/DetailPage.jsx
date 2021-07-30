@@ -11,8 +11,16 @@ function DetailPage(props) {
       .then((data) => setCountry(data[0]));
   }, [name]);
   console.log(country);
+
   return (
-    <div className='detail-page'>
+    <div className="detail-page">
+      <div className="btnBack">
+        <button className="btn">
+          <i className="fas fa-arrow-left"></i>
+          <a href={`/`}>Back</a>
+        </button>
+      </div>
+
       <div className="country-flag">
         <img src={country.flag} alt="country-flag" />
       </div>
@@ -23,9 +31,14 @@ function DetailPage(props) {
         <p>Region: {country.region}</p>
         <p>Capital: {country.capital}</p>
         <p>Top Level Domain: {country.topLevelDomain}</p>
-        <p>Currencies: {country.currencis?.[0].name}</p>
-        <p>Languages: {country.languages?.[1].name}</p>
-        <p>Borders: {country.borders}</p>
+        <p>Currencies: {country.currencies?.[0].name}</p>
+        <p>Languages: {country.languages?.map(language => <span>{language.name}</span>)}</p>
+        <p>
+          Borders:{" "}
+          {country.borders?.map((border) => (
+            <span>{border}</span>
+          ))}
+        </p>
       </div>
     </div>
   );

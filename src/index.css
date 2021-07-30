@@ -128,3 +128,24 @@ body {
 .detail-page .country-flag img {
   width: 70%;
 }
+
+/* Back Button */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  color: orange;
+}
+
+.btn {
+  padding: 5px 35px;
+  background-color: var(--color-secondary);
+  border: none;
+  margin: 2rem 3.5rem 0;
+  border-radius: 5px;
+}
