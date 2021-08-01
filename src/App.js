@@ -1,23 +1,29 @@
-import Header from "./components/Header";
+import { useState } from "react";
 import Homepage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ThemeContext from "./libs/Context";
+import Header from "./components/Header";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+
   return (
-    <div className="App">
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <Header />
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <Homepage />
-          </Route>
-          <Route path="/detail/:name">
-            <DetailPage />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+      <div className="App" data-theme={theme}>
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <Homepage />
+            </Route>
+            <Route path="/detail/:name">
+              <DetailPage />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

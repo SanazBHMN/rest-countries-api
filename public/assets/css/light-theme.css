@@ -1,4 +1,4 @@
-:root {
+[data-theme="light"] {
   --color-primary: hsl(0, 0%, 98%);
   --color-secondary: hsl(0, 0%, 100%);
   --color-text: hsl(200, 15%, 8%);

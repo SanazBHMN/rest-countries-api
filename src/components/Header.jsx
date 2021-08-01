@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../libs/Context";
+import ThemeToggler from "./ThemeToggler";
 
 function Header() {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="header">
       <h5>Where in the world?</h5>
       <div className="theme-mode">
-        <i className="fa fa-moon-o"></i>
-        <span>Dark Mode</span>
+        <ThemeToggler />
+        <span>{theme === "dark" ? "light" : "dark"} Mode</span>
       </div>
     </div>
   );
