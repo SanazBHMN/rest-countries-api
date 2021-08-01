@@ -10,8 +10,8 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Header />
       <div className="App" data-theme={theme}>
+        <Header />
         <Router>
           <Switch>
             <Route path="/" exact>

@@ -6,15 +6,12 @@ function ThemeToggler() {
   console.log(theme);
 
   return (
-    <div>
+    <div className="theme-toggler">
       <button
-        className="theme-toggler"
+        className="btn-toggle"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {/* <span>{theme === "light" ? "🌞" : "🔅"}</span> */}
         <i className="fa fa-moon-o"></i>
-        <i className="fa fa-spoon"></i>
-        {/* <ion-icon name="moon-outline"></ion-icon> */}
       </button>
     </div>
   );

@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
-
-
-
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: "Nunito Sans";
-} */
-
 body {
   margin: 0;
   padding: 0;
@@ -17,10 +7,6 @@ body {
   font-family: "Nunito Sans";
   /* background-color: var(--color-primary);
   color: var(--color-text); */
-}
-
-i{
-  font-family: "FontAwesome" !important;
 }
 
 .App {
@@ -31,6 +17,7 @@ i{
 /* Header */
 .header {
   background-color: var(--color-secondary);
+  /* background-color: gray; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,16 +27,37 @@ i{
   margin: 1.5rem 1rem;
 }
 
-/* Searchbox */
-.search {
-  /* background-color: red; */
-  margin: 1rem 0;
+.header .theme-mode {
+  /* background-color: green; */
+  display: flex;
+  justify-content: space-around;
 }
 
-.searchbox {
+.theme-mode > span {
   /* background-color: red; */
+  margin-left: 2px;
+  font-weight: 600;
+}
+
+/* theme toggle */
+.btn-toggle {
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+}
+
+/* Searchbox */
+.searchbox {
+  /* background-color: green; */
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.searchbox i {
+  position: absolute;
+  left: 50px;
 }
 
 .searchbox input {
@@ -60,18 +68,8 @@ i{
   border: none;
   outline: 0;
   width: 100%;
-  margin: 0 1rem;
+  margin: 1rem;
 }
-
-/* Dropdown */
-/* .dropdown input { */
-/* background-color: var(--color-secondary);
-  padding: 10px 15px;
-  border-radius: 3px;
-  border: none;
-  outline: 0;
-  margin: 0 1rem;
-} */
 
 /* Card */
 .country-card {
@@ -104,7 +102,7 @@ i{
   background-color: var(--color-secondary);
   color: white;
   border-radius: 3px;
-  padding: 16px;
+  padding: 0.7rem 3rem 0.7rem 0.3rem;
   border: none;
 }
 
@@ -161,4 +159,11 @@ a:visited {
   border: none;
   margin: 2rem 3.5rem 0;
   border-radius: 5px;
+}
+
+@media screen and (min-width: 765px) {
+  .content {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+  }
 }

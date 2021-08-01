@@ -34,7 +34,7 @@ function Homepage(props) {
   // console.log(countryName)
 
   return (
-    <div>
+    <div className="content">
       <Searchbox input={countryName} search={handleSearch} />
       <Dropdown />
       <div className="container">

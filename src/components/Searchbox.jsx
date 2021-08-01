@@ -4,8 +4,7 @@ function Searchbox({ input, search }) {
   return (
     <div className="search">
       <div className="searchbox">
-        <i className="fas fa-search"></i>
-        {/* <ion-icon name="search-outline"></ion-icon> */}
+        <i className="fa fa-search"></i>
         <input
           className="search-country"
           type="search"
