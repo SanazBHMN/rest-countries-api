@@ -1,15 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
-*,
+
+
+
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
   font-family: "Nunito Sans";
-}
+} */
 
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans";
+  /* background-color: var(--color-primary);
+  color: var(--color-text); */
+}
+
+i{
+  font-family: "FontAwesome" !important;
+}
+
+.App {
   background-color: var(--color-primary);
   color: var(--color-text);
 }
