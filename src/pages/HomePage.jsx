@@ -35,17 +35,14 @@ function Homepage(props) {
 
   return (
     <div className="content">
-      <Searchbox input={countryName} search={handleSearch} />
-      <Dropdown />
+      <div className="top">
+        <Searchbox input={countryName} search={handleSearch} />
+        <Dropdown />
+      </div>
       <div className="container">
         {countries.map((country) => {
           // console.log(country);
-          return (
-            <Card
-              key={country.name}
-              country={country}
-            />
-          );
+          return <Card key={country.name} country={country} />;
         })}
       </div>
     </div>

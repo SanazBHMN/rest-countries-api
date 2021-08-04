@@ -21,6 +21,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.4rem;
+  padding: 0 1.3rem;
 }
 
 .header > * {
@@ -43,7 +45,17 @@ body {
 .btn-toggle {
   border: none;
   cursor: pointer;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 1.4rem;
+}
+
+/* top */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
 }
 
 /* Searchbox */
@@ -78,6 +90,8 @@ body {
   border-radius: 5px;
   margin: 2.3rem auto;
   width: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 .country-card .country-flag img {
@@ -143,14 +157,7 @@ body {
 /* Back Button */
 a {
   text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-a:visited {
-  color: orange;
+  color: var(--color-text);
 }
 
 .btn {
@@ -162,8 +169,28 @@ a:visited {
 }
 
 @media screen and (min-width: 765px) {
-  .content {
+  .container {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+  }
+
+  .country-card {
+    width: 80%;
+    /* margin: 0;   */
+  }
+
+  .country-flag {
+    /* border: 3px solid red; */
+    height: 12em;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .searchbox input {
+    padding-right: 10rem;
   }
 }
